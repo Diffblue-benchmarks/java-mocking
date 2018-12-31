@@ -1,0 +1,24 @@
+# Tested on Deeptest release 1.10.0
+cbmcArguments:
+  depth: false
+  java-generate-no-comments: true
+  string-non-empty: true
+  java-assume-inputs-non-null: true
+phases:
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 10
+    unwind: 3
+-
+  timeout: 120
+  cbmcArguments:
+    max-nondet-array-length: 20
+    unwind: 3
+-
+  timeout: 120
+  cbmcArguments:
+    max-nondet-array-length: 20
+    unwind: 5
+    throw-runtime-exceptions: false
